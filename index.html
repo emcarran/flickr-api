@@ -1,0 +1,40 @@
+<!Doctype>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Flickr Image Searcher</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body ng-controller="FlickrSearchController a FlkrCtrl">
+    <header class="introSearch">
+        <h1>Flikr Image Searcher</h1>
+    </header>
+
+    <!--search bar-->
+    <div class="container">
+        <form ng-submit="search()" novalidate>
+            <input ng-model="searchTerm" type="text" placeholder="Enter your search term" ng-hide="isSearching" required/>
+            <div ng-show="isSearching">
+                <input id class="myButton" type="submit" value="Submit" />
+            </div>
+        </form>
+
+        <!--content//search-results-->
+        <ul class-imageList>
+            <li ng-repeat="picture in results.photos.photo">
+                <div class="caption">
+                    <p>{{picture.title}}</p>
+                </div>
+                <a href="https://farm{{picture.farm}}.staticflickr.com/{{picture.server}}/{{picture.id}_{{picture.secret}}_b.jpg" target="_blank">
+                    <div class="div-image" style='background-image: url("https://farm{{picture.farm}}.staticflickr.com/{{picture.server}}/{{picture.id}_{{picture.secret}}_b.jpg"); background-size:cover; background-position:center center;'></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
