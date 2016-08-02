@@ -1,0 +1,138 @@
+/* CSS reset
+(all the browsers will see the website in the same by setting every tag to 0 (the website will look the same on all browsers))
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+
+/* General styles
+(the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li)) */
+
+body {
+    background-color: lightgrey;
+    color: #7b4b6f;
+    text-align: center;
+    font-family: fantasy;
+}
+
+
+/* Header styles
+(all the styles inside the < header > or < nav > tags)
+*/
+
+.introSearch {
+    margin: 2rem auto;
+    font-size: 3rem;
+    text-shadow: 3px 3px 3px grey;
+}
+
+
+/* Content styles
+(all the styles inside the < sections > or < aside > tags)
+*/
+
+input {
+    display: inline;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.myButton {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #7b4b6f;
+    color: white;
+    margin-left: 1rem;
+}
+
+.imageList {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imageList li {
+    display: inline-block;
+    width: 15%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    overflow: hidden;
+    height: 10rem;
+    border: 1px solid #7b4b6f;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: whitesmoke;
+}
+
+.imageList li .div-image {
+    width: 98%;
+    height: 9rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border: 1px solid #7b4b6f;
+    margin-bottom: 1rem;
+}
+
+.imageList li.caption {
+    width: 100%;
+    height: 2rem;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+/*large laptop*/
+
+@media only screen and (max-width: 1600px) {
+    .imageList li {
+        width: 19%;
+    }
+    .imageList {
+        width: 80%;
+    }
+}
+
+
+/*ipad lanscape / small laptop*/
+
+@media only screen and (max-width: 1024px) {
+    .imageList li {
+        width: 28%;
+    }
+    .imageList {
+        width: 90%;
+    }
+}
+
+
+/*ipad potrait*/
+
+@media only screen and (max-width: 768px) {
+    .imageList li {
+        width: 43%;
+    }
+    .imageList {
+        width: 95%;
+    }
+}
+
+
+/*iphone landscape*/
+
+@media only screen and (max-width: 480px) {
+    .imageList li {
+        width: 98%;
+    }
+    .imageList {
+        width: 99%;
+    }
+}

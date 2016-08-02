@@ -11,20 +11,20 @@
 
 <body ng-controller="FlickrSearchController a FlkrCtrl">
     <header class="introSearch">
-        <h1>Flikr Image Searcher</h1>
+        <h1>Flickr Image Searcher</h1>
     </header>
 
     <!--search bar-->
     <div class="container">
         <form ng-submit="search()" novalidate>
             <input ng-model="searchTerm" type="text" placeholder="Enter your search term" ng-hide="isSearching" required/>
+            <input id class="myButton" type="submit" value="Submit" />
             <div ng-show="isSearching">
-                <input id class="myButton" type="submit" value="Submit" />
             </div>
         </form>
 
         <!--content//search-results-->
-        <ul class-imageList>
+        <ul class="imageList">
             <li ng-repeat="picture in results.photos.photo">
                 <div class="caption">
                     <p>{{picture.title}}</p>
