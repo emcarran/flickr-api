@@ -1,34 +1,34 @@
-(function () {
+angular.module('myApp', [])
+    .controller('flickrController', flickrController);
 
-    angular.module('myApp', [])
-        .controller('myCtrl', myCtrl);
+flickrController.$inject = ['$scope', '$http']
 
-    myCtrl.$inject = ['$scope', '$http']
+function flickrController($scope, $http) {
+    $scope.results = [];
+    $scope.isSearching = false;
 
-    function myCtrl($scope, $http) {
-        $scope.results = [];
-        $scope.isSearching = false;
-
-        $scope.search = function () {
+    $scope.search = function () {
+        $scope.submit = function () {
             $scope.isSearching = true;
-            $http({
-                    method: 'GET',
-                    url: 'https://api.flickr.com/services/rest',
-                    params: {
-                        method: 'flickr.photos.search',
-                        api_key: 'b98be794b23a60323174737f82b0c2c9',
-                        text: $scope.searchTerm,
-                        format: 'json',
-                        nojsoncallback: 1
-                    }
-                }).success(function (data) {
-                    $scope.results = data;
-                    $scope.isSearching = false;
-                }),
-                function (error) {
-                    console.log('error!');
-                    $scope.isSearching = true;
-                };
-        };
-    }
-})();
+        }
+
+        $http({
+                method: 'GET',
+                url: 'https://api.flickr.com/services/rest',
+                params: {
+                    method: 'flickr.photos.search',
+                    api_key: 'ed26d792481385000b27a4fc6bc2a465',
+                    text: $scope.searchTerm,
+                    format: 'json',
+                    nojsoncallback: 1
+                }
+            }).success(function (data) {
+                $scope.results = data;
+                $scope.isSearching = false;
+            }),
+            function (error) {
+                console.log('error!');
+                $scope.isSearching = true;
+            };
+    };
+};
