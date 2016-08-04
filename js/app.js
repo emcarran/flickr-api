@@ -1,9 +1,10 @@
-angular.module('myApp', [])
-    .controller('flickrController', flickrController);
+angular.module('myApp', ['ngAnimate'])
+
+.controller('flickrController', flickrController);
 
 flickrController.$inject = ['$scope', '$http', '$timeout']
 
-function flickrController($scope, $http, $timeout) {
+function flickrController($scope, $http) {
     $scope.results = [];
     $scope.isSearching = false;
     //set results found to zero.
@@ -30,6 +31,7 @@ function flickrController($scope, $http, $timeout) {
                 // helper function called
                 $scope.resultsFound = data.photos.photo.length;
                 console.log(data);
+
 
             }),
             function (error) {
