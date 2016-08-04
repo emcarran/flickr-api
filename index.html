@@ -22,14 +22,18 @@
             <input ng-model="searchTerm" type="text" placeholder="Enter your search term" ng-hide="isSearching" required/>
             <input id class="myButton" type="submit" value="Submit" />
             <div ng-show="isSearching">
-                <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                <h1 class="text-center">
+                <span class="glyphicon glyphicon-refresh spin"></span>
+                </h1>
             </div>
         </form>
 
         <!--content//search-results-->
+        <p>Results: {{ resultsFound }}</p>
         <ul class="imageList">
             <li ng-repeat="picture in results.photos.photo">
                 <div class="caption">
+
                     <p>{{ picture.title }}</p>
                 </div>
                 <a href="https://farm{{ picture.farm }}.staticflickr.com/{{ picture.server }}/{{ picture.id }}_{{ picture.secret }}_b.jpg" target="_blank">

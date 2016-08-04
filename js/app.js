@@ -1,11 +1,13 @@
 angular.module('myApp', [])
     .controller('flickrController', flickrController);
 
-flickrController.$inject = ['$scope', '$http']
+flickrController.$inject = ['$scope', '$http', '$timeout']
 
-function flickrController($scope, $http) {
+function flickrController($scope, $http, $timeout) {
     $scope.results = [];
     $scope.isSearching = false;
+    //set results found to zero.
+    $scope.resultsFound = 0;
 
     $scope.search = function () {
         $scope.submit = function () {
@@ -25,6 +27,10 @@ function flickrController($scope, $http) {
             }).success(function (data) {
                 $scope.results = data;
                 $scope.isSearching = false;
+                // helper function called
+                $scope.resultsFound = data.photos.photo.length;
+                console.log(data);
+
             }),
             function (error) {
                 console.log('error!');
