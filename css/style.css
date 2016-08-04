@@ -94,6 +94,9 @@ h1 {
     font-weight: bold;
 }
 
+
+/* Styling the .glyphicon-spin animation*/
+
 .glyphicon-spin {
     -animation: spin 2s infinite linear;
     -ms-animation: spin 2s infinite linear;
