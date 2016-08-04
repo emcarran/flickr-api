@@ -89,11 +89,16 @@ input {
     margin-bottom: 1rem;
 }
 
-.spin {
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.glyphicon-spin {
     -animation: spin 2s infinite linear;
     -ms-animation: spin 2s infinite linear;
-    -webkit-animation: spinw 2s infinite linear;
-    -moz-animation: spinm 2s infinite linear;
+    -webkit-animation: spin 2s infinite linear;
+    -moz-animation: spin 2s infinite linear;
     -o-animation: spin 2s infinite linear;
     -webkit-transform-origin: 50% 58%;
     transform-origin: 50% 58%;
