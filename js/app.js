@@ -23,13 +23,15 @@ function flickrController($scope, $http) {
                     api_key: 'ed26d792481385000b27a4fc6bc2a465',
                     text: $scope.searchTerm,
                     format: 'json',
-                    nojsoncallback: 1
+                    nojsoncallback: 1,
+                    per_page: 250,
+
                 }
             }).success(function (data) {
                 $scope.results = data;
                 $scope.isSearching = false;
                 // helper function called
-                $scope.resultsFound = data.photos.photo.length;
+                $scope.resultsFound = data.photos.total;
                 console.log(data);
 
 
